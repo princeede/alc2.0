@@ -12,6 +12,8 @@ mongoose.connect(dbname, { useMongoClient: true });
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "Problem connecting to database"));
 
+app.set('port', (proc.env.PORT || 8000));
+
 //set view engine
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(path.join(__dirname, '/public')));
@@ -50,5 +52,6 @@ var alc = require("./routes/alc");
 app.use('/', alc);
 
 
-app.listen(8000);
-console.log("ALC Listening on port 8000");
+app.listen(app.get('port'), function(){
+	console.log("ALC Listening on port ", app.get('port'))
+});
