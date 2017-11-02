@@ -24,5 +24,8 @@
         "mongoose": "^4.12.4",
         "passport": "^0.4.0",
         "passport-local": "^1.0.0"
+    },
+    "engines" : {
+        "node": "6.11.4"
     }
 }
