@@ -12,7 +12,7 @@ mongoose.connect(dbname, { useMongoClient: true });
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "Problem connecting to database"));
 
-app.set('port', (proc.env.PORT || 8000));
+app.set('port', (process.env.PORT || 8000));
 
 //set view engine
 app.use(express.static(__dirname + '/views'));
