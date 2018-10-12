@@ -13,7 +13,7 @@
         "async": "^2.5.0",
         "bcryptjs": "^2.4.3",
         "body-parser": "*",
-        "bootstrap": "^3.3.7",
+        "bootstrap": "*",
         "connect-flash": "^0.1.1",
         "ejs": "^2.5.7",
         "express": "^4.16.1",
