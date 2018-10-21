@@ -58,9 +58,9 @@ module.exports.createStudent_get = function(req, res) {
 //create a new student (post)
 module.exports.createStudent_post = function(req, res) {
     req.checkBody('firstName', 'Enter your first name').notEmpty().isAlpha();
-    req.checkBody('firstName', 'Enter your last name').notEmpty().isAlpha();
-    req.checkBody('gender', 'Enter your first name').isIn(['Male', 'Female']);
-    req.checkBody('admissionNumber', 'Enter your first name').notEmpty().isAlpha().isLength({ min: 9, max: 9 });
+    req.checkBody('lastName', 'Enter your last name').notEmpty().isAlpha();
+    req.checkBody('gender', 'Enter your gender').isIn(['Male', 'Female']);
+    req.checkBody('admissionNumber', 'Enter your NSID').notEmpty().isAlpha().isLength({ min: 5, max: 9 });
 
     req.sanitizeBody('firstName').escape();
     req.sanitizeBody('firstName').trim();
