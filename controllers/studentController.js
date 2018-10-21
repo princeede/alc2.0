@@ -78,25 +78,30 @@ module.exports.createStudent_post = function(req, res) {
     var faculty = req.body.faculty;
     var department = req.body.department;
 
-    var student = new Student({
+    var student = {
         firstName: firstName,
         lastName: lastName,
         gender: gender,
         admissionNumber: admissionNumber,
         faculty: faculty,
         department: department
-    });
+    };
 
-    if (errors) {
-        res.render('newstudent', { student: student, errors: errors })
-    } else {
-        student.save(function(err, success) {
-            if (err) {
-                return res.send(err);
-            }
-            res.redirect('/');
-        })
-    }
+    Student.create(student, (doc, err) => {
+        if (errors) {
+            res.render('newstudent', { student: student, errors: errors })
+        } else {
+            student.save(function(err, success) {
+                console.log("Saving student "+firstName)
+                if (err) {
+                    return res.send(err);
+                }
+                res.redirect('/');
+            })
+        }
+    })
+
+    
 }
 
 
