@@ -7,10 +7,17 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var path = require('path');
 
-var dbname = "mongodb://localhost/alc";
+// var dbname = "mongodb://localhost/alc";
+//Using connection string from the Azure mongodb
+var dbname = "mongodb://alc2:HSYRepmP15rql8SkSfRS97ULZEUdDHORIfamQQzS9BTd8gHayjGbBgKpxvDsxSZlcZgk8SEHEMtNxvdxna7eBg==@alc2.documents.azure.com:10255/?ssl=true";
 mongoose.connect(dbname, { useMongoClient: true });
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "Problem connecting to database"));
+
+// var mongoClient = require("mongodb").MongoClient;
+// mongoClient.connect("mongodb://alc2:HSYRepmP15rql8SkSfRS97ULZEUdDHORIfamQQzS9BTd8gHayjGbBgKpxvDsxSZlcZgk8SEHEMtNxvdxna7eBg==@alc2.documents.azure.com:10255/?ssl=true", function (err, db) {
+//   db.close();
+// });
 
 app.set('port', (process.env.PORT || 8000));
 
