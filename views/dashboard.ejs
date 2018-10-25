@@ -146,10 +146,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <% for(student in data[4]){%>
+                                <% for(department in data[6]){%>
                                     <tr class="gradeA">
                                         <td>
-                                            <%= data[6].name %>
+                                            <%= department.name %>
                                         </td>
                                         
                                     <%}%>
@@ -179,10 +179,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% for(student in data[4]){%>
+                                    <% for(faculty in data[5]){%>
                                         <tr class="gradeA">
                                             <td>
-                                                <%= data[5].name.toString() %>
+                                                <%= faculty.name %>
                                             </td>
                                         <%}%>
                                 </tbody>
