@@ -90,4 +90,13 @@ router.get('/department/delete/:id', departmentController.deleteDepartment_get);
 router.post('/department/delete/:id', departmentController.deleteDepartment_post);
 
 
+
+
+
+//Serverless test
+router.get("/serverless-test", (req, res) => {
+    res.render("serverless-test")
+})
+
+
 module.exports = router
