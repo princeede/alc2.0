@@ -4,7 +4,7 @@ var Faculty = require("../models/faculty");
 
 exports.index = function(req, res) {
     Promise.all([Student.count({ gender: 'Male', status: true }), Student.count({ gender: 'Female', status: true }), Faculty.count(), Department.count(),
-            Student.find({ status: true }).populate('faculty').populate('department')
+            Student.find({ status: true }).populate('faculty').populate('department'), Faculty.find({status: true}), Department.find({ status: true })
         ])
         .then(function(data) {
             res.render('dashboard', { data: data })
