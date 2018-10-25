@@ -149,7 +149,7 @@
                                 <% for(department in data[6]){%>
                                     <tr class="gradeA">
                                         <td>
-                                            <%= department.name %>
+                                            <%= data[6][department].name %>
                                         </td>
                                         
                                     <%}%>
@@ -182,7 +182,7 @@
                                     <% for(faculty in data[5]){%>
                                         <tr class="gradeA">
                                             <td>
-                                                <%= faculty.name %>
+                                                <%= data[5][faculty].name %>
                                             </td>
                                         <%}%>
                                 </tbody>
